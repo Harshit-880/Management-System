@@ -1,6 +1,6 @@
 import { authService } from './authService';
 
-const API_BASE = 'http://localhost:5291/api';
+const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:5291/api';
 
 function headers() {
   const token = authService.getToken();

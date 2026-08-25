@@ -53,11 +53,14 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 app.UseCors("ReactApp");
-// Note: UseHttpsRedirection removed for HTTP-only local dev.
-// Re-enable it in production behind HTTPS.
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+// SPA fallback — serve index.html for any non-API route
+app.MapFallbackToFile("index.html");
 
 app.Run();
 
