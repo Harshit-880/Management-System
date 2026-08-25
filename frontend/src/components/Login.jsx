@@ -58,9 +58,6 @@ export default function Login() {
             {loading ? 'Signing in…' : 'Sign In'}
           </button>
         </form>
-        <p>
-          Don&apos;t have an account? <Link to="/register">Register</Link>
-        </p>
       </div>
     </div>
   );
