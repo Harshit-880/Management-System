@@ -26,6 +26,9 @@ COPY --from=frontend-build /app/frontend/dist ./wwwroot
 
 # Render sets PORT env var — ASP.NET Core reads ASPNETCORE_URLS
 ENV ASPNETCORE_URLS=http://+:10000
+# Disable config file watching (hits inotify limit on Render free tier)
+ENV DOTNET_USE_POLLING_FILE_WATCHER=false
+ENV ASPNETCORE_hostBuilder__reloadConfigOnChange=false
 EXPOSE 10000
 
 ENTRYPOINT ["dotnet", "HotelManagement.API.dll"]
