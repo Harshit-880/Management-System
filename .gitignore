@@ -37,8 +37,10 @@ frontend/pnpm-debug.log*
 # Environment & Secrets
 # ===========================
 .env
-.env.*
-!.env.example
+.env.local
+.env.*.local
+frontend/.env.development
+!frontend/.env.production
 
 # ===========================
 # OS & Editor
