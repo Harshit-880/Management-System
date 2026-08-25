@@ -1,0 +1,141 @@
+erDiagram
+
+    ROLES {
+        int     RoleId          PK
+        string  RoleName
+        string  Description
+    }
+
+    USERS {
+        int      UserId         PK
+        string   Email
+        string   PasswordHash
+        string   FirstName
+        string   LastName
+        string   Phone
+        boolean  IsActive
+        datetime CreatedAt
+    }
+
+    USER_ROLES {
+        int UserId  PK,FK
+        int RoleId  PK,FK
+    }
+
+    HOTEL_STAFF {
+        int      HotelStaffId  PK
+        int      HotelId       FK
+        int      UserId        FK
+        int      RoleId        FK
+        boolean  IsActive
+        datetime JoinedAt
+    }
+
+    HOTELS {
+        int     HotelId          PK
+        int     CreatedByUserId  FK
+        string  HotelName
+        string  Address
+        string  City
+        string  Country
+        string  Phone
+        string  Email
+        string  Currency
+        string  TimeZone
+        boolean IsActive
+    }
+
+    ROOM_TYPES {
+        int     RoomTypeId  PK
+        int     HotelId     FK
+        string  Name
+        string  Description
+        decimal BasePrice
+        int     Capacity
+    }
+
+    ROOMS {
+        int     RoomId      PK
+        int     HotelId     FK
+        int     RoomTypeId  FK
+        string  RoomNumber
+        string  Status
+        decimal Price
+    }
+
+    GUESTS {
+        int    GuestId               PK
+        int    UserId                FK
+        string FirstName
+        string LastName
+        string Phone
+        string Email
+        string IdentificationType
+        string IdentificationNumber
+    }
+
+    RESERVATIONS {
+        int     ReservationId  PK
+        int     HotelId        FK
+        int     GuestId        FK
+        int     RoomId         FK
+        date    CheckInDate
+        date    CheckOutDate
+        string  Status
+        decimal TotalAmount
+    }
+
+    GUEST_STAYS {
+        int      StayId         PK
+        int      ReservationId  FK
+        string   AccessToken
+        datetime CheckInAt
+        datetime CheckOutAt
+        string   Status
+    }
+
+    SERVICE_TYPES {
+        int     ServiceTypeId  PK
+        string  Name
+        string  Description
+        boolean IsActive
+    }
+
+    SERVICE_REQUESTS {
+        int      ServiceRequestId   PK
+        int      StayId             FK
+        int      ServiceTypeId      FK
+        int      AssignedToUserId   FK
+        string   Status
+        string   Notes
+        datetime RequestedAt
+        datetime CompletedAt
+    }
+
+    PAYMENTS {
+        int      PaymentId      PK
+        int      StayId         FK
+        decimal  Amount
+        string   PaymentMethod
+        string   Status
+        datetime PaidAt
+    }
+
+    %% Relationships
+    USERS          ||--o{ USER_ROLES       : "has"
+    ROLES          ||--o{ USER_ROLES       : "assigned"
+    ROLES          ||--o{ HOTEL_STAFF      : "defines role"
+    USERS          ||--o{ HOTEL_STAFF      : "works as"
+    USERS          ||--o{ HOTELS           : "manages"
+    HOTELS         ||--o{ HOTEL_STAFF      : "employs"
+    HOTELS         ||--o{ ROOM_TYPES       : "has"
+    HOTELS         ||--o{ ROOMS            : "contains"
+    ROOM_TYPES     ||--o{ ROOMS            : "categories"
+    USERS          ||--o|  GUESTS          : "may have"
+    GUESTS         ||--o{ RESERVATIONS     : "makes"
+    HOTELS         ||--o{ RESERVATIONS     : "receives"
+    ROOMS          ||--o{ RESERVATIONS     : "reserved"
+    RESERVATIONS   ||--o| GUEST_STAYS      : "creates"
+    SERVICE_TYPES  ||--o{ SERVICE_REQUESTS : "defines"
+    GUEST_STAYS    ||--o{ SERVICE_REQUESTS : "has"
+    GUEST_STAYS    ||--o{ PAYMENTS         : "has"

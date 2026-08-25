@@ -1,0 +1,313 @@
+/* ── Page ─────────────────────────────────────────────────────── */
+.hkr-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+}
+
+.hkr-hotel-select {
+  align-self: flex-start;
+  padding: .45rem .85rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: .88rem;
+  color: #374151;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.hkr-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: .9rem;
+  padding: 3rem 0;
+}
+
+/* ── Stats bar ────────────────────────────────────────────────── */
+.hkr-stats {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.hkr-stat {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: .65rem 1.1rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.hkr-stat-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hkr-stat-num {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.hkr-stat-lbl {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* ── Floor tabs ───────────────────────────────────────────────── */
+.hkr-floor-tabs {
+  display: flex;
+  gap: .2rem;
+  flex-wrap: wrap;
+}
+
+.hkr-floor-tab {
+  padding: .38rem .9rem;
+  border-radius: 7px;
+  font-size: .82rem;
+  font-weight: 500;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.hkr-floor-tab:hover  { background: #f0f0f5; color: #111827; }
+.hkr-floor-tab.active { background: #e8ecf4; color: #374151; font-weight: 700; }
+
+/* ── Featured grid (action cards) ────────────────────────────── */
+.hkr-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* ── Room Card ────────────────────────────────────────────────── */
+.hkr-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow .15s, transform .1s;
+}
+.hkr-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); transform: translateY(-1px); }
+
+/* status variants — soft left accent only */
+.hkr-card--dirty       { border-top: 3px solid #c8a882; }
+.hkr-card--cleaning    { border-top: 3px solid #bfa76e; }
+.hkr-card--ready       { border-top: 3px solid #7aab8a; }
+.hkr-card--occupied    { border-top: 3px solid #7a9fc4; }
+.hkr-card--maintenance { border-top: 3px solid #c49090; }
+.hkr-card--oos         { border-top: 3px solid #b0b5be; }
+
+/* ── Badge ────────────────────────────────────────────────────── */
+.hkr-badge {
+  align-self: flex-end;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  padding: .22rem .6rem;
+  border-radius: 0 0 0 8px;
+  margin-top: -1px;
+}
+
+/* soft badge palette */
+.hkr-dirty       { background: #fdf5e8; color: #7a5024; }
+.hkr-cleaning    { background: #fdf8e8; color: #6b4d18; }
+.hkr-ready       { background: #ebf5ee; color: #2e6645; }
+.hkr-occupied    { background: #edf3fb; color: #2a4d75; }
+.hkr-maintenance { background: #faf0f0; color: #7a3535; }
+.hkr-oos         { background: #f4f5f7; color: #5a6070; }
+
+/* ── Card body ────────────────────────────────────────────────── */
+.hkr-card-body {
+  padding: .8rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.hkr-room-number {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.hkr-room-type {
+  font-size: .75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.hkr-verified-text {
+  font-size: .74rem;
+  color: #4a7a5a;
+  font-weight: 600;
+  margin-top: .2rem;
+}
+
+.hkr-maintenance-lbl {
+  font-size: .74rem;
+  color: #8a4545;
+  font-weight: 600;
+  margin-top: .2rem;
+}
+
+/* ── Progress bar ─────────────────────────────────────────────── */
+.hkr-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  margin-top: .3rem;
+}
+
+.hkr-progress-track {
+  height: 5px;
+  background: #f3f4f6;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.hkr-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #bfa76e, #d4c08a);
+  border-radius: 99px;
+  transition: width .8s ease;
+}
+
+.hkr-assigned-text {
+  font-size: .7rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* ── Action area ──────────────────────────────────────────────── */
+.hkr-action-area {
+  padding: .6rem 1rem .9rem;
+}
+
+.hkr-btn {
+  width: 100%;
+  padding: .48rem 0;
+  border-radius: 8px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+  border: none;
+  cursor: pointer;
+  transition: opacity .15s, transform .1s;
+}
+.hkr-btn:hover:not(:disabled) { opacity: .88; transform: translateY(-1px); }
+.hkr-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.hkr-btn--start  { background: #7a5a3a; color: #fff; }
+.hkr-btn--finish { background: #8a7040; color: #fff; }
+.hkr-btn--dirty  { background: #f3f4f6; color: #374151; border: 1.5px solid #d1d5db; }
+.hkr-btn--ready  { background: #3d6e52; color: #fff; }
+
+.hkr-no-action {
+  font-size: .73rem;
+  color: #9ca3af;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ── Floor Overview card ──────────────────────────────────────── */
+.hkr-floor-overview-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+}
+
+.hkr-floor-overview-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── Legend ───────────────────────────────────────────────────── */
+.hkr-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+}
+
+.hkr-legend-item {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: #374151;
+}
+
+.hkr-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Floor section ────────────────────────────────────────────── */
+.hkr-floor-section {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.hkr-floor-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.hkr-dots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+/* ── Floor dot ────────────────────────────────────────────────── */
+.hkr-floor-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .65rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: default;
+  transition: transform .1s;
+  flex-shrink: 0;
+}
+.hkr-floor-dot:hover { transform: scale(1.12); }
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hkr-featured-grid { grid-template-columns: 1fr 1fr; }
+  .hkr-stats { flex-direction: column; }
+}

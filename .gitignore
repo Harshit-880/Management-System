@@ -1,0 +1,54 @@
+# ===========================
+# .NET / ASP.NET Core Backend
+# ===========================
+backend/bin/
+backend/obj/
+backend/*.user
+backend/.vs/
+backend/**/*.suo
+backend/**/*.user
+backend/**/*.userosscache
+backend/**/*.sln.docstates
+*.nupkg
+*.snupkg
+*.log
+
+# Secrets / config overrides
+backend/appsettings.Development.json
+backend/appsettings.Production.json
+backend/secrets.json
+
+# ===========================
+# Node / React / Vite Frontend
+# ===========================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.cache/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# ===========================
+# Environment & Secrets
+# ===========================
+.env
+.env.*
+!.env.example
+
+# ===========================
+# OS & Editor
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sw?

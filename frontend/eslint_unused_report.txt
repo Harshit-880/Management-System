@@ -1,0 +1,8 @@
+node.exe : Invalid option '--eslintrc' - perhaps you meant '--ext'?
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Invalid option ... meant '--ext'?    :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

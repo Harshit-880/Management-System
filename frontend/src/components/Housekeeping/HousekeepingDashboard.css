@@ -1,0 +1,190 @@
+/* ── Page ─────────────────────────────────────────────────────── */
+.hk-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+
+.hk-hotel-select {
+  align-self: flex-start;
+  padding: .45rem .85rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: .88rem;
+  color: #374151;
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+.hk-empty-hint {
+  text-align: center;
+  color: #9ca3af;
+  font-size: .9rem;
+  padding: 3rem 0;
+}
+
+/* ── Stats ─────────────────────────────────────────────────────── */
+.hk-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.hk-stat {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-left-width: 4px;
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hk-stat--red    { border-left-color: #ef4444; }
+.hk-stat--blue   { border-left-color: #3b82f6; }
+.hk-stat--green  { border-left-color: #10b981; }
+.hk-stat--orange { border-left-color: #f59e0b; }
+
+.hk-stat-icon { font-size: 1.6rem; line-height: 1; }
+
+.hk-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.hk-stat-lbl {
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: .25rem;
+}
+
+/* ── Two-column layout ────────────────────────────────────────── */
+.hk-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Card ─────────────────────────────────────────────────────── */
+.hk-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.hk-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .1rem;
+}
+
+.hk-card-head h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.hk-count-badge {
+  background: #f3f4f6;
+  color: #374151;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .15rem .55rem;
+  border-radius: 12px;
+}
+
+.hk-inner-empty {
+  color: #9ca3af;
+  font-size: .85rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* ── Room rows ───────────────────────────────────────────────── */
+.hk-room-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem .75rem;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 9px;
+}
+
+.hk-room-num {
+  font-weight: 700;
+  font-size: .9rem;
+  color: #111827;
+}
+
+.hk-room-type {
+  font-size: .74rem;
+  color: #6b7280;
+  margin-top: .1rem;
+}
+
+.hk-status-pill {
+  font-size: .7rem;
+  font-weight: 700;
+  padding: .22rem .65rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.hk-status-pill--dirty       { background: #fee2e2; color: #b91c1c; }
+.hk-status-pill--maintenance { background: #fef3c7; color: #b45309; }
+.hk-status-pill--available   { background: #dcfce7; color: #15803d; }
+.hk-status-pill--occupied    { background: #dbeafe; color: #1d4ed8; }
+
+/* ── Request rows ────────────────────────────────────────────── */
+.hk-req-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .6rem .75rem;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 9px;
+}
+
+.hk-req-info { flex: 1; min-width: 0; }
+
+.hk-req-title {
+  font-weight: 600;
+  font-size: .88rem;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hk-req-meta {
+  display: flex;
+  gap: .6rem;
+  font-size: .73rem;
+  color: #6b7280;
+  margin-top: .15rem;
+}
+
+.hk-req-status {
+  font-size: .75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-top: .1rem;
+}
